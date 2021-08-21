@@ -3,7 +3,7 @@
 A [Storybook preset](https://storybook.js.org/docs/react/addons/writing-presets) to load SVG files inline using `svg-inline-loader`.
 
 ## Basic Usage
-First `npm install storybook-preset-inline-svg`
+First `npm install storybook-preset-inline-svg svg-inline-loader`
 
 Then update one of the following files based on your Storybook setup:
 
