@@ -1,4 +1,4 @@
-# Storybook Preset Inline SVG
+# storybook-preset-inline-svg
 
 A [Storybook preset](https://storybook.js.org/docs/react/addons/writing-presets) to load SVG files inline using `svg-inline-loader`.
 
@@ -23,13 +23,13 @@ Then update one of the following files based on your Storybook setup:
 
 ## Advanced Usage
 
-By default this preset will inline **all** SVG files. You can use these options to filter which SVG files are inlined or to pass options along to `svg-inline-loader`.
+By default this preset will inline ***all*** SVG files. Use options to filter which SVG files are inlined, or to pass options along to `svg-inline-loader`.
 
-None of the options are required. Only use one of `include` or `exclude`, not both.
+None of the options are required. Only use one of `include` or `exclude`, not both, which can be a `RegExp` or `Function`.
 
 * `svgInlineLoaderOptions` options supported by [svg-inline-loader](https://www.npmjs.com/package/svg-inline-loader)
-* `include` sets which files will be inlined. Only RegExp and Function are supported. See Webpack's [include](https://webpack.js.org/configuration/module/#ruleinclude).
-* `exclude` sets which files will not be inlined. Only RegExp and Function are supported. See Webpack's [exclude](https://webpack.js.org/configuration/module/#ruleexclude).
+* `include` files to be inlined using [include](https://webpack.js.org/configuration/module/#ruleinclude)
+* `exclude` files from being inlined using [exclude](https://webpack.js.org/configuration/module/#ruleexclude)
 
 For example,
 
