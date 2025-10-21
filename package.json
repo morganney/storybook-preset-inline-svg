@@ -1,8 +1,21 @@
 {
   "name": "storybook-preset-inline-svg",
-  "version": "1.0.1",
+  "version": "2.0.0-rc.0",
   "description": "Storybook preset to load SVG files inline",
+  "type": "module",
   "main": "dist",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "engineStrict": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/morganney/storybook-preset-inline-svg.git"
@@ -11,7 +24,9 @@
     "url": "https://github.com/morganney/storybook-preset-inline-svg/issues"
   },
   "scripts": {
-    "prepack": "babel src --out-dir dist"
+    "build": "babel-dual-package src",
+    "prettier": "prettier --write .",
+    "prepack": "node --run build"
   },
   "keywords": [
     "storybook",
@@ -25,11 +40,17 @@
     "dist"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0"
+    "babel-dual-package": "^1.2.1",
+    "prettier": "^3.6.2"
   },
   "peerDependencies": {
+    "storybook": "^10.0.0-beta.13",
     "svg-inline-loader": "^0.8.2"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "printWidth": 90,
+    "semi": false,
+    "singleQuote": true
   }
 }

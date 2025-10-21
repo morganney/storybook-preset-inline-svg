@@ -7,9 +7,9 @@ const webpackFinal = (config = {}, options = {}) => {
       use: [
         {
           loader: 'svg-inline-loader',
-          options: svgInlineLoaderOptions
-        }
-      ]
+          options: svgInlineLoaderOptions,
+        },
+      ],
     }
 
     if (include) {
@@ -34,28 +34,28 @@ const webpackFinal = (config = {}, options = {}) => {
             if (include) {
               return {
                 ...rule,
-                exclude: include
+                exclude: include,
               }
             }
 
             if (exclude) {
               return {
                 ...rule,
-                include: exclude
+                include: exclude,
               }
             }
 
             return {
               ...rule,
-              exclude: /\.svg$/i
+              exclude: /\.svg$/i,
             }
           }
 
           return rule
         }),
-        getInlineSvgRule()
-      ]
-    }
+        getInlineSvgRule(),
+      ],
+    },
   }
 }
 
